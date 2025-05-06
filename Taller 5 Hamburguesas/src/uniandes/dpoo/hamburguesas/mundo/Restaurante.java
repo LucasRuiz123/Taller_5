@@ -105,6 +105,7 @@ public class Restaurante
         pedidoEnCurso.guardarFactura( new File( CARPETA_FACTURAS + nombreArchivo ) );
         pedidoEnCurso = null;
     }
+    
 
     /**
      * Retorna el pedido actual en curso. Si no hay un pedido en curso, retorna null.

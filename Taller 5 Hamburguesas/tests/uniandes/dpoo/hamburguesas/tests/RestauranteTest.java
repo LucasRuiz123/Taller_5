@@ -1,11 +1,15 @@
 package uniandes.dpoo.hamburguesas.tests;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import uniandes.dpoo.hamburguesas.excepciones.NoHayPedidoEnCursoException;
 import uniandes.dpoo.hamburguesas.excepciones.YaHayUnPedidoEnCursoException;
 
 import uniandes.dpoo.hamburguesas.mundo.Pedido;
@@ -35,5 +39,17 @@ class RestauranteTest {
 		
 	}
 	@Test
-	void get
+	void testCerrarYGuardarPedido() {
+		
+		NoHayPedidoEnCursoException exception = assertThrows(NoHayPedidoEnCursoException.class,()-> restaurante.cerrarYGuardarPedido(),"Deberia lanzar una exception");
+	}
+	@Test
+	void testGetPedidoEnCurso() {
+		Pedido pedidoEnCurso = restaurante.getPedidoEnCurso();
+		assertEquals(null,pedidoEnCurso,"deberia ser null");
+	}
+	@Test
+	void testCargarInformacionRestaurante() throws IOException {
+		
+	}
 }
