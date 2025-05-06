@@ -308,6 +308,12 @@ public class Restaurante
         {
             reader.close( );
         }
+        
     }
+
+	public void setPedidoEnCurso(Pedido pedidoEnCurso) {
+		this.pedidoEnCurso = pedidoEnCurso;
+	}
+    
 
 }
