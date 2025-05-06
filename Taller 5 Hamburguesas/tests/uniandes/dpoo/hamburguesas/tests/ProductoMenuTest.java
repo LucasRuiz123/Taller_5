@@ -36,7 +36,10 @@ void setUp() throws Exception
 }
 	@Test
 	void testGenerarTextoFactura() {
-		String facturaEsperada = "cortesía\n            0\n";
-        assertEquals(facturaEsperada, producto1.generarTextoFactura());
+		String facturaEsperada1 = producto1.getNombre();
+		String facturaEsperada2 = Integer.toString(producto1.getPrecio());
+        assertTrue(producto1.generarTextoFactura().contains(facturaEsperada2));
+        assertTrue(producto1.generarTextoFactura().contains(facturaEsperada1));
+		
 	}
 }

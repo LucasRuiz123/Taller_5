@@ -87,17 +87,13 @@ public class ProductoAjustado implements Producto
         agregados.add(ingrediente);
     }
 
-    public void quitarIngredienteAgregado(Ingrediente ingrediente) {
-        agregados.remove(ingrediente);
-    }
+
 
     public void eliminarIngrediente(Ingrediente ingrediente) {
         eliminados.add(ingrediente);
     }
 
-    public void restaurarIngredienteEliminado(Ingrediente ingrediente) {
-        eliminados.remove(ingrediente);
-    }
+
 
     
     // setters y getters
@@ -105,18 +101,12 @@ public class ProductoAjustado implements Producto
 		return agregados;
 	}
 
-	public void setAgregados(ArrayList<Ingrediente> agregados) {
-		this.agregados = agregados;
-	}
 
 	public ArrayList<Ingrediente> getEliminados() {
 		return eliminados;
 	}
 
-	public void setEliminados(ArrayList<Ingrediente> eliminados) {
-		this.eliminados = eliminados;
-	}
-    
+
     
 
 }

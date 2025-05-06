@@ -168,6 +168,7 @@ public class Restaurante
      */
     public void cargarInformacionRestaurante( File archivoIngredientes, File archivoMenu, File archivoCombos ) throws HamburguesaException, NumberFormatException, IOException
     {
+    	
         cargarIngredientes( archivoIngredientes );
         cargarMenu( archivoMenu );
         cargarCombos( archivoCombos );

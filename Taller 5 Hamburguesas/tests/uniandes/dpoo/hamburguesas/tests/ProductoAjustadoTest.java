@@ -57,6 +57,7 @@ public class ProductoAjustadoTest {
 	
 	@Test
 	void testGenerarTextoFactura() {
+		
 		String factura = producto1_ajustado.generarTextoFactura();
 		//assertTrue(factura.contains(producto1_ajustado.getNombre()));
 		ArrayList<Ingrediente> agregados = producto1_ajustado.getAgregados();

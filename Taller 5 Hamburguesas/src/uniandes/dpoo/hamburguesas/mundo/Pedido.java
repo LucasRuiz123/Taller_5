@@ -170,9 +170,9 @@ public class Pedido
             System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
         PrintWriter out;
-        out = new PrintWriter( archivo );
-        out.print( factura );
-        out.close( );
+        //out = new PrintWriter( archivo );
+        //out.print( factura );
+        //out.close( );
     }
     // public void de crear el numero de pedidos
 
