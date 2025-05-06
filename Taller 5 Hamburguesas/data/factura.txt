@@ -1,0 +1,13 @@
+Cliente: Raul
+Dirección: Calle 1 #7A
+----------------
+Combo combo corral
+ Descuento: 0.1
+            2450
+uniandes.dpoo.hamburguesas.mundo.ProductoMenu@146587a2    +lechuga                1000    +pepinillos                2500            27500
+corral
+            14000
+----------------
+Precio Neto:  43950
+IVA:          8350
+Precio Total: 52300

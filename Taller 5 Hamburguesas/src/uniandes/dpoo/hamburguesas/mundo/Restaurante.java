@@ -71,6 +71,9 @@ public class Restaurante
     // ***************************************
     // Métodos
     // ***************************************
+    public String getCarpeta_Facturas() {
+    	return CARPETA_FACTURAS;
+    }
 
     /**
      * Inicia un nuevo pedido.

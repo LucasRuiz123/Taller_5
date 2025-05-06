@@ -163,16 +163,11 @@ public class Pedido
     	
         String factura = generarTextoFactura( );
         
-        try (FileWriter writer = new FileWriter(archivo)) {
-            writer.write(factura);
-            System.out.println("Archivo escrito correctamente.");
-        } catch (IOException e) {
-            System.out.println("Error al escribir el archivo: " + e.getMessage());
-        }
+       
         PrintWriter out;
-        //out = new PrintWriter( archivo );
-        //out.print( factura );
-        //out.close( );
+        out = new PrintWriter( archivo );
+        out.print( factura );
+        out.close( );
     }
     // public void de crear el numero de pedidos
 

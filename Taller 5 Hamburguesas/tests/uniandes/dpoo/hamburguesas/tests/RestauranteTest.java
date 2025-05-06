@@ -56,11 +56,11 @@ class RestauranteTest {
 	@Test
 	void testCargarInformacionRestaurante() throws IOException, NumberFormatException, HamburguesaException {
 		// 1. Configuración del archivo
-	    File archivoMenu = new File("./data/factura_test.txt");
-	    File archivoIngredientes = new File("./data/factura_test.txt");
-	    File archivoCombos = new File("./data/factura_test.txt");
-	    String StringMenu = Files.readString(Paths.get("./data/factura_test.txt"));
-	    String StringIngredientes = Files.readString(Paths.get("./data/factura_test.txt"));
+	    File archivoMenu = new File("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"menu.txt");
+	    File archivoIngredientes = new File("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"Ingredientes.txt");
+	    File archivoCombos = new File("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"Combo.txt");
+	    String StringMenu = Files.readString(Paths.get("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"menu.txt"));
+	    String StringIngredientes = Files.readString(Paths.get("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"Ingredientes.txt"));
 	    String StringCombos = Files.readString(Paths.get("./data/factura_test.txt"));
 	    // assert para los menus
 	    assertTrue(((Collection<Ingrediente>) archivoMenu).contains("corral"));

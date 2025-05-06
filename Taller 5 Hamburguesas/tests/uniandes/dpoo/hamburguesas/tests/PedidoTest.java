@@ -86,7 +86,7 @@ class PedidoTest {
 	@Test
 	void testguardarFactura() throws IOException {
 	    // 1. Configuración del archivo
-	    File archivo = new File("./data/factura_test.txt");
+	    File archivo = new File("./Taller 5 Hamburguesas/data/factura.txt");
 	    if (archivo.exists()) {
 	        archivo.delete(); 
 	    }
@@ -98,7 +98,7 @@ class PedidoTest {
 	    
 	   
 	    pedido.guardarFactura(archivo);
-	    String contenido = Files.readString(Paths.get("./data/factura_test.txt"));
+	    String contenido = Files.readString(Paths.get("./Taller 5 Hamburguesas/data/factura.txt"));
 	    
 	    String lineaNetoBuscada = "Precio Neto:  " + precioNeto;
 	    String lineaIVABuscada = "IVA:          " + precioIVA;
