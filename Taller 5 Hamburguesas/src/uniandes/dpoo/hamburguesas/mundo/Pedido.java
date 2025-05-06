@@ -2,6 +2,8 @@ package uniandes.dpoo.hamburguesas.mundo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -18,7 +20,7 @@ public class Pedido
     /**
      * El número de pedidos que se han creado hasta el momento
      */
-    private static int numeroPedidos;
+    private static int numeroPedidos; // numero
 
     /**
      * El número identificador de un pedido
@@ -55,13 +57,14 @@ public class Pedido
         productos = new ArrayList<Producto>( );
     }
 
+    
     /**
      * Retorna el identificador del pedido
      * @return
      */
     public int getIdPedido( )
     {
-        return idPedido;
+        return numeroPedidos+1;
     }
 
     /**
@@ -156,12 +159,37 @@ public class Pedido
      */
     public void guardarFactura( File archivo ) throws FileNotFoundException
     {
+    	
+    	
         String factura = generarTextoFactura( );
-
+        
+        try (FileWriter writer = new FileWriter(archivo)) {
+            writer.write(factura);
+            System.out.println("Archivo escrito correctamente.");
+        } catch (IOException e) {
+            System.out.println("Error al escribir el archivo: " + e.getMessage());
+        }
         PrintWriter out;
         out = new PrintWriter( archivo );
         out.print( factura );
         out.close( );
     }
+    // public void de crear el numero de pedidos
+
+
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+	public int getNumeroPedido() {
+		return numeroPedidos;
+		
+	}
+	public void setNumeroPedido(int numero) {
+		numeroPedidos= numero;
+		
+	}
+	public double getIVA() {
+		return IVA;
+	}
 
 }

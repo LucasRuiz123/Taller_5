@@ -35,6 +35,7 @@ private Combo combo_1;
 		int precio = (int) ((5500+5000+14000)*0.1);
 		assertEquals(precio,combo_1.getPrecio(),"preci incorrecto");
 	}
+	
 	@Test
 	void testGetFactura() {
 		String factura =combo_1.generarTextoFactura();

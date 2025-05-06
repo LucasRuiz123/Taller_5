@@ -22,6 +22,7 @@ public class ProductoAjustadoTest {
 	private Ingrediente ingrediente2;
 	@BeforeEach
 	void setUp() throws Exception{
+		
 		producto1 = new ProductoMenu("especial", 24000);
 		producto1_ajustado = new ProductoAjustado(producto1);
 		producto2_ajustado = new ProductoAjustado(producto1);
@@ -53,6 +54,7 @@ public class ProductoAjustadoTest {
 		assertEquals(producto1.getPrecio()+ingrediente1.getCostoAdicional()+ingrediente2.getCostoAdicional(),producto1_ajustado.getPrecio(),"el precio esta equivocado");
 		assertEquals(producto1.getPrecio()-ingrediente1.getCostoAdicional()-ingrediente2.getCostoAdicional(),producto2_ajustado.getPrecio(),"el precio esta equivocado");
 	}
+	
 	@Test
 	void testGenerarTextoFactura() {
 		String factura = producto1_ajustado.generarTextoFactura();
@@ -70,5 +72,7 @@ public class ProductoAjustadoTest {
 			assertTrue(factura.contains(precio));
 		}
 		
+		
 	}
+	
 }
