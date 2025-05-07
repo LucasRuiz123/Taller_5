@@ -261,9 +261,11 @@ public class Restaurante
             {
                 if( !linea.isEmpty( ) )
                 {
+                	
                     String[] comboStr = linea.split( ";" );
+                    
                     String nombreCombo = comboStr[ 0 ];
-                    double descuento = Double.parseDouble( comboStr[ 1 ].replace( "%", "" ) ) / 100;
+                    double descuento = Double.parseDouble(comboStr[1].replace("%", "")) / 100;
 
                     for( Combo c : this.menuCombos )
                     {

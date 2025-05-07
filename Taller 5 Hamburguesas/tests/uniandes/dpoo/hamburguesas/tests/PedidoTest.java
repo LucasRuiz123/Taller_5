@@ -45,6 +45,7 @@ class PedidoTest {
 	    // Creación de ProductoMenu (corregir asignación)
 	    this.productoMenu = new ProductoMenu("corral", 14000); 
 
+	    
 	    // Creación del pedido (corregir asignación)
 	    this.pedido = new Pedido("Raul", "Calle 1 #7A");  
 	    this.pedido.agregarProducto(this.combo);

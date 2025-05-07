@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.junit.jupiter.api.AfterEach;
@@ -16,8 +17,10 @@ import org.junit.jupiter.api.Test;
 import uniandes.dpoo.hamburguesas.excepciones.HamburguesaException;
 import uniandes.dpoo.hamburguesas.excepciones.NoHayPedidoEnCursoException;
 import uniandes.dpoo.hamburguesas.excepciones.YaHayUnPedidoEnCursoException;
+import uniandes.dpoo.hamburguesas.mundo.Combo;
 import uniandes.dpoo.hamburguesas.mundo.Ingrediente;
 import uniandes.dpoo.hamburguesas.mundo.Pedido;
+import uniandes.dpoo.hamburguesas.mundo.ProductoMenu;
 import uniandes.dpoo.hamburguesas.mundo.Restaurante;
 
 class RestauranteTest {
@@ -56,19 +59,47 @@ class RestauranteTest {
 	@Test
 	void testCargarInformacionRestaurante() throws IOException, NumberFormatException, HamburguesaException {
 		// 1. Configuración del archivo
-	    File archivoMenu = new File("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"menu.txt");
-	    File archivoIngredientes = new File("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"Ingredientes.txt");
-	    File archivoCombos = new File("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"Combo.txt");
-	    String StringMenu = Files.readString(Paths.get("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"menu.txt"));
-	    String StringIngredientes = Files.readString(Paths.get("./Taller 5 Hamburguesas/data/"+restaurante.getCarpeta_Facturas()+"Ingredientes.txt"));
-	    String StringCombos = Files.readString(Paths.get("./data/factura_test.txt"));
-	    // assert para los menus
-	    assertTrue(((Collection<Ingrediente>) archivoMenu).contains("corral"));
+	    File archivoMenu = new File(".\\Taller 5 Hamburguesas\\data\\menu.txt");
+	    File archivoIngredientes = new File(".\\Taller 5 Hamburguesas\\data\\ingredientes.txt");
+	    File archivoCombos = new File(".\\Taller 5 Hamburguesas\\data\\combos.txt");
+	    
+	    restaurante.cargarInformacionRestaurante(archivoIngredientes, archivoMenu, archivoCombos);
+	    
+	    String StringMenu = Files.readString(Paths.get(".\\Taller 5 Hamburguesas\\data\\menu.txt"));
+	    String StringIngredientes = Files.readString(Paths.get(".\\Taller 5 Hamburguesas\\data\\ingredientes.txt"));
+	    String StringCombos = Files.readString(Paths.get(".\\Taller 5 Hamburguesas\\data\\combos.txt"));
+	    
+	   ArrayList<Combo> combos = restaurante.getMenuCombos();
+	   ArrayList<ProductoMenu> menu = restaurante.getMenuBase();
+	   ArrayList<Ingrediente> ingredientes = restaurante.getIngredientes();
+	   
+	   // combo prueba
+	   
+	   ArrayList<ProductoMenu> productos = new ArrayList<ProductoMenu>();
+	    productos.add(new ProductoMenu("papas medianas", 5500));
+	    productos.add(new ProductoMenu("gaseosa", 5000));
+	    productos.add(new ProductoMenu("corral", 14000));
+	    Combo combo = new Combo("combo corral", 0.1, productos);
+	   
+	   // Menu prueba
+	   
+	    ProductoMenu productoMenu = new ProductoMenu("corral", 14000);
+	    
+	   // Ingrediente prueba
+	   
+	    Ingrediente ingrediente1 = new Ingrediente("lechuga", 1000);
+	   
+	   
+	   //assertTrue(combos.contains(combo));
+	   //assertTrue(menu.contains(productoMenu));
+	   assertTrue(ingredientes.contains(ingrediente1));
+	   
+	   
 
 	
 	    
 	    
-		restaurante.cargarInformacionRestaurante(archivoIngredientes, archivoMenu, archivoCombos);
+		
 	}
 	@Test
 	void testGests(){

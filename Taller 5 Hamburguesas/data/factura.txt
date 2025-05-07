@@ -4,7 +4,7 @@ Dirección: Calle 1 #7A
 Combo combo corral
  Descuento: 0.1
             2450
-uniandes.dpoo.hamburguesas.mundo.ProductoMenu@146587a2    +lechuga                1000    +pepinillos                2500            27500
+uniandes.dpoo.hamburguesas.mundo.ProductoMenu@71454b9d    +lechuga                1000    +pepinillos                2500            27500
 corral
             14000
 ----------------
